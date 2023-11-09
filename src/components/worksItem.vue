@@ -19,7 +19,8 @@
         height:calc((90vw - 1rem)/16*9);
     }
     img{
-        width:calc(90vw - 1rem);
+        max-width:calc(90vw - 1rem);
+        justify-self:center;
     }
     .item{
         grid-auto-flow:row;
@@ -31,8 +32,8 @@
         height:180px;
     }
     img{
-        min-width:320px;
         max-width:320px;
+        justify-self:center;
     }
     .item{
         grid-auto-flow:column;
@@ -48,6 +49,7 @@ iframe{
     height:auto;
 }
 .item{
+    grid-template-columns:320px auto;
     display:grid;
     grid-gap:1rem;
     max-width:calc(90vw - .5rem);
