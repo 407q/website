@@ -3,6 +3,7 @@
       <a href="https://note.com/32ma_me/n/nf22ffff313a0" target="_blank" rel="noreferrer noopener"><img src="/img/topimage.webp" alt="プロフィール画像" title="おや…？"></a>
       <h1>中村 栞</h1>
       <h3>Shio Nakamura / 32ma.me</h3>
+      <span class="arrow"/>
     </div>
 </template>
 <style scoped>
@@ -31,7 +32,7 @@
   height:90vh;
   margin-bottom:10vh;
 }
-#top::after{
+.arrow{
   position:absolute;
   content:"";
   width:20px;
