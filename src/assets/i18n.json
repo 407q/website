@@ -1,0 +1,50 @@
+{
+    "ja":{
+        "tophover":"おや…？",
+        "backtotop":"一番上に戻ります",
+        "about":"2007年、神奈川県で生まれる。S高等学校3期生、ユニヴァーサルデザイン検定初級 第1100号。<br>小学生の頃からPCを使ったものづくりを始め、2018年に「GPリーグ ヤマハ発動機プログラミングコロシアム 神奈川県大会」で予選・本選を優勝。<br>現在はグラフィックデザインを中心に、映像制作、作曲、Web制作など幅広い分野を横断的に取り組んでいる。制作のモットーは「みんなにやさしく」。",
+        "works":{
+            "showreel2022":{
+                "title":"ShowREEL 2022",
+                "desc":"2022年11月までに作った映像作品をまとめたものです。これ以降はあまり作品としての映像を作れていません…。"
+            },
+            "machida-cf2023":{
+                "title":"町田キャンフェス2023 特設サイト",
+                "desc":"学校の文化祭(みたいなもの)のWebサイトです。Vueでのサイト制作の他に、Illustratorを用いたフロアマップや案内看板のデザイン、サイトに載せる写真の撮影なども行いました。"
+            }
+        },
+        "category":{
+            "design":"デザイン",
+            "video":"映像制作",
+            "programming":"プログラミング",
+            "web":"Web制作"
+        },
+        "contacts":{
+            "mail":"メール"
+        }
+    },
+    "en":{
+        "tophover":"Huh...?",
+        "backtotop":"Back to Top",
+        "about":"Born in 2007 in Kanagawa, Japan. The 3rd class of S High School, IAUD Elementary Certificate for Universal Design No.1100.<br>I started creating with PC in elementary school, and I won the first place in &quot;GP League Yamaha Motor Programming Colosseum Kanagawa prefectural tournament&quot; in 2018.<br>Currently, I'm working in a wide range of fields, mainly graphic design, but also video production, music composition, web production and more. The motto of my production is &quot;Everyone-Friendly&quot;.",
+        "works":{
+            "showreel2022":{
+                "title":"ShowREEL 2022",
+                "desc":"The showreel of my video productions until November 2022. After that, I didn't make many videos...."
+            },
+            "machida-cf2023":{
+                "title":"Machida Campus Festival 2023 Special Website",
+                "desc":"The website that was made for a kind of my school festival. I not only made the website with Vue, but also designed the floor maps and the signboard with Illustrator, and took some photos for the website. *The background image has been replaced due to portrait rights."
+            }
+        },
+        "category":{
+            "design":"Design",
+            "video":"Video Production",
+            "programming":"Programming",
+            "web":"Web Production"
+        },
+        "contacts":{
+            "mail":"E-mail"
+        }
+    }
+}

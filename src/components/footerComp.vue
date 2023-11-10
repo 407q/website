@@ -5,7 +5,7 @@
             <a href="https://misskey.io/@mwxdxx" title="Misskey.io"><Icon icon="simple-icons:misskey"/></a>
             <a href="https://youtube.com/@32ma_me" title="YouTube"><Icon icon="simple-icons:youtube"/></a>
             <a href="https://note.com/32ma_me" title="note"><Icon icon="dashicons:welcome-write-blog"/></a>
-            <a href="mailto:contact@32ma.me" title="メール"><Icon icon="tabler:mail-filled"/></a>
+            <a href="mailto:contact@32ma.me" :title="$t('contacts.mail')"><Icon icon="tabler:mail-filled"/></a>
         </div>
         <p>Copyright © 2023-{{new Date().getFullYear()}} Shio Nakamura</p>
     </footer>

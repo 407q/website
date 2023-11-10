@@ -1,14 +1,14 @@
 <script setup>
     import {ref} from "vue";
-    const props=defineProps({left:String,category:String,title:String,text:String});
+    const props=defineProps({left:String,category:String,title:String,desc:String});
 </script>
 <template>
     <div class="item">
         <component :is="left.split('|')[0]" :src="left.split('|')[1]"/>
-        <div class="desc">
+        <div class="content">
             <h5>{{category}}</h5>
             <h4>{{title}}</h4>
-            <p>{{text}}</p>
+            <p>{{desc}}</p>
         </div>
     </div>
 </template>
@@ -65,7 +65,7 @@ h4{
 span{
     text-align:center;
 }
-.desc{
+.content{
     align-self:center;
     margin-block:auto;
     position:relative;

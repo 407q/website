@@ -4,12 +4,12 @@
 
 <template>
     <div class="list">
-        <skillsItem :icon="'simple-icons:adobeillustrator'" :category="'デザイン'" :title="'Illustrator'"/>
-        <skillsItem :icon="'simple-icons:adobexd'" :category="'デザイン'" :title="'Adobe XD'"/>
-        <skillsItem :icon="'simple-icons:adobeaftereffects'" :category="'映像'" :title="'After Effects'"/>
-        <skillsItem :icon="'simple-icons:googleappsscript'" :category="'プログラミング'" :title="'Google Apps Script'"/>
-        <skillsItem :icon="'simple-icons:python'" :category="'プログラミング'" :title="'Python'"/>
-        <skillsItem :icon="'simple-icons:vuedotjs'" :category="'Web'" :title="'Vue.js'"/>
+        <skillsItem :icon="'simple-icons:adobeillustrator'" :category="$t('category.design')" :title="'Illustrator'"/>
+        <skillsItem :icon="'simple-icons:adobexd'" :category="$t('category.design')" :title="'Adobe XD'"/>
+        <skillsItem :icon="'simple-icons:adobeaftereffects'" :category="$t('category.video')" :title="'After Effects'"/>
+        <skillsItem :icon="'simple-icons:googleappsscript'" :category="$t('category.programming')" :title="'Google Apps Script'"/>
+        <skillsItem :icon="'simple-icons:python'" :category="$t('category.programming')" :title="'Python'"/>
+        <skillsItem :icon="'simple-icons:vuedotjs'" :category="$t('category.web')" :title="'Vue.js'"/>
     </div>
 </template>
 <style scoped>

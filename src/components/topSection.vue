@@ -1,6 +1,6 @@
 <template>
     <div id="top">
-      <a href="https://note.com/32ma_me/n/nf22ffff313a0" target="_blank" rel="noreferrer noopener"><img src="/img/topimage.webp" alt="プロフィール画像" title="おや…？"></a>
+      <a href="https://note.com/32ma_me/n/nf22ffff313a0" target="_blank" rel="noreferrer noopener"><img src="/img/topimage.webp" alt="プロフィール画像" :title="$t('tophover')"></a>
       <h1>中村 栞</h1>
       <h3>Shio Nakamura / 32ma.me</h3>
       <span class="arrow"/>
