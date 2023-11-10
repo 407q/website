@@ -20,11 +20,17 @@ html{
     letter-spacing:.02em;
 }
 body{
-    overflow-wrap:break-word;
     color:rgb(var(--fg));
     background:rgb(var(--bg));
-    margin:5vh auto;
+}
+main{
+    overflow-wrap:break-word;
+    margin-inline:auto;
     width:min(800px,90vw);
+}
+footer{
+  margin-block:5vh;
+  text-align:center;
 }
 a{
     color:rgb(var(--fg));

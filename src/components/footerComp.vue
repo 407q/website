@@ -11,10 +11,6 @@
     </footer>
 </template>
 <style scoped>
-footer{
-  margin-top:5vh;
-  text-align:center;
-}
 footer p{
     margin:.2rem;
 }

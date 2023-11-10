@@ -17,18 +17,20 @@ onMounted(()=>{
 </script>
 
 <template>
-  <Transition><span class="back" title="一番上に戻ります" @click="scrollBack" v-show="backShow"/></Transition>
-  <topSection/>
-  <h2 id="about">About</h2>
-  <p>
-    2007年、神奈川県で生まれる。S高等学校3期生、ユニヴァーサルデザイン検定初級 第1100号。<br>
-    小学生の頃からPCを使ったものづくりを始め、2018年に「GPリーグ ヤマハ発動機プログラミングコロシアム 神奈川県大会」で予選・本選を優勝。<br>
-    現在はグラフィックデザインを中心に、映像制作、作曲、Web制作など幅広い分野を横断的に取り組んでいる。制作のモットーは「みんなにやさしく」。
-  </p>
-  <h2 id="works">Works</h2>
-  <worksSection/>
-  <h2 id="skills">Skills</h2>
-  <skillsSection/>
+  <main>
+    <Transition><span class="back" title="一番上に戻ります" @click="scrollBack" v-show="backShow"/></Transition>
+    <topSection/>
+    <h2 id="about">About</h2>
+    <p>
+      2007年、神奈川県で生まれる。S高等学校3期生、ユニヴァーサルデザイン検定初級 第1100号。<br>
+      小学生の頃からPCを使ったものづくりを始め、2018年に「GPリーグ ヤマハ発動機プログラミングコロシアム 神奈川県大会」で予選・本選を優勝。<br>
+      現在はグラフィックデザインを中心に、映像制作、作曲、Web制作など幅広い分野を横断的に取り組んでいる。制作のモットーは「みんなにやさしく」。
+    </p>
+    <h2 id="works">Works</h2>
+    <worksSection/>
+    <h2 id="skills">Skills</h2>
+    <skillsSection/>
+  </main>
   <footerComp/>
 </template>
 
