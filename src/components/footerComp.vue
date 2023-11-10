@@ -8,6 +8,12 @@
             <a href="mailto:contact@32ma.me" :title="$t('contacts.mail')"><Icon icon="tabler:mail-filled"/></a>
         </div>
         <p>Copyright © 2023-{{new Date().getFullYear()}} Shio Nakamura</p>
+        <div class="locale-changer">
+            <p>表示言語/Language:</p>
+            <select v-model="$i18n.locale">
+                <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{locale}}</option>
+            </select>
+        </div>
     </footer>
 </template>
 <style scoped>
@@ -22,5 +28,10 @@ footer p{
     width:1.5rem;
     height:auto;
     margin-inline:.2em;
+}
+.locale-changer{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
 }
 </style>

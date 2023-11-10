@@ -42,28 +42,28 @@
   animation:arrow 1.5s infinite;
   bottom:10vh;
 }
-#top img{
+img{
   border:0 solid rgb(var(--bg));
   outline:3px solid rgb(var(--fg));
   border-radius:50%;
   width:200px;
   height:auto;
 }
-#top a,#top img{
+a,img{
   transition:.5s;
 }
-#top a:hover{
+a:hover{
   opacity:1;
   transform:scale(1.1);
 }
-#top a:hover img{
+a:hover img{
   border:10px solid rgb(var(--bg));
   outline:7px solid rgb(var(--fg));
 }
-#top h1{
+h1{
   margin-bottom:0;
 }
-#top h3{
+h3{
   border:none;
   padding:0;
   text-align:center;

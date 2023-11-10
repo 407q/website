@@ -4,7 +4,7 @@
 </script>
 <template>
     <div class="item">
-        <component :is="left.split('|')[0]" :src="left.split('|')[1]"/>
+        <component :is="left.split('|')[0]" :src="left.split('|')[1]" loading="lazy" :title="title" :alt="title"/>
         <div class="content">
             <h5>{{category}}</h5>
             <h4>{{title}}</h4>

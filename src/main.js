@@ -6,7 +6,7 @@ import i18nJson from './assets/i18n.json'
 
 
 const i18n=createI18n({
-    locale:window.navigator.language,
+    locale:navigator.language.split("-")[0],
     fallbackLocale:"en",
     messages:i18nJson
 })
