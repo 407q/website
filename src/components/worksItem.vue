@@ -36,6 +36,7 @@
         justify-self:center;
     }
     .item{
+        grid-template-columns:320px auto;
         grid-auto-flow:column;
     }
 }
@@ -49,7 +50,6 @@ iframe{
     height:auto;
 }
 .item{
-    grid-template-columns:320px auto;
     display:grid;
     grid-gap:1rem;
     max-width:calc(90vw - .5rem);
