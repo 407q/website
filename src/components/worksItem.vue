@@ -6,8 +6,8 @@
     <div class="item">
         <component :is="left.split('|')[0]" :src="left.split('|')[1]" loading="lazy" :title="title" :alt="title"/>
         <div class="content">
-            <h5>{{category}}</h5>
-            <h4>{{title}}</h4>
+            <p class="category">{{category}}</p>
+            <p class="title">{{title}}</p>
             <p>{{desc}}</p>
         </div>
     </div>
@@ -58,9 +58,9 @@ iframe{
     padding-block:1vh;
     justify-content:center;
 }
-h4{
+.title{
     font-size:1.7rem;
-    margin:0;
+    font-weight:600;
 }
 span{
     text-align:center;
@@ -74,8 +74,7 @@ span{
 p{
     margin:0;
 }
-h5{
-    margin:0;
+.category{
     font-weight:450;
     font-size:1.2rem;
 }

@@ -1,6 +1,6 @@
 {
     "ja":{
-        "tophover":"おや…？",
+        "tophover":"プロフィール",
         "backtotop":"一番上に戻ります",
         "about":"2007年、神奈川県で生まれる。S高等学校3期生、ユニヴァーサルデザイン検定初級 第1100号。<br>小学生の頃からPCを使ったものづくりを始め、2018年に「GPリーグ ヤマハ発動機プログラミングコロシアム 神奈川県大会」で予選・本選を優勝。<br>現在はグラフィックデザインを中心に、映像制作、作曲、Web制作など幅広い分野を横断的に取り組んでいる。制作のモットーは「みんなにやさしく」。",
         "works":{
@@ -24,7 +24,7 @@
         }
     },
     "en":{
-        "tophover":"Huh...?",
+        "tophover":"Profile",
         "backtotop":"Back to Top",
         "about":"Born in 2007 in Kanagawa, Japan, Shio is a 3rd year student in S High School, pursuing an IAUD Elementary Certificate for Universal Design No.1100.<br>Shio started their creative work in elementary school. They won the first place in &quot;GP League Yamaha Motor Programming Colosseum Kanagawa prefectural tournament&quot; in 2018.<br>Currently, Shio works in a wide range of fields, such as graphic design, video production, music composition, web production and more. Their production motto:  &quot;Everyone-Friendly&quot;.",
         "works":{

@@ -9,8 +9,8 @@
         </div>
         <p>Copyright © 2023-{{new Date().getFullYear()}} Shio Nakamura</p>
         <div class="locale-changer">
-            <p>表示言語/Language:</p>
-            <select v-model="$i18n.locale">
+            <label for="lang">表示言語/Language:</label>
+            <select id="lang" v-model="$i18n.locale">
                 <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{locale}}</option>
             </select>
         </div>

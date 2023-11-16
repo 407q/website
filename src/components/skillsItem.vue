@@ -6,7 +6,7 @@
         <Icon :icon="icon"/>
         <div class="desc">
             <p>{{category}}</p>
-            <h5 v-html="title"/>
+            <p class="title">{{title}}</p>
         </div>
     </div>
 </template>
@@ -47,8 +47,8 @@
 p{
     margin:0;
 }
-h5{
-    margin:0;
+.title{
+    font-weight:600;
     font-size:1.5rem;
 }
 </style>

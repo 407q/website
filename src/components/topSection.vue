@@ -1,8 +1,10 @@
 <template>
     <div id="top">
       <a href="https://note.com/32ma_me/n/nf22ffff313a0" target="_blank" rel="noreferrer noopener"><img src="/img/topimage.webp" alt="プロフィール画像" :title="$t('tophover')"></a>
-      <h1>中村 栞</h1>
-      <h3>Shio Nakamura / 32ma.me</h3>
+      <h1>
+        中村 栞<br>
+        <span class="sub">Shio Nakamura / 32ma.me</span>
+      </h1>
       <span class="arrow"/>
     </div>
 </template>
@@ -61,12 +63,15 @@ a:hover img{
   outline:7px solid rgb(var(--fg));
 }
 h1{
-  margin-bottom:0;
+  margin-top:1em;
+  margin-bottom:1.5rem;
+  line-height:1.2em;
 }
-h3{
+.sub{
   border:none;
   padding:0;
   text-align:center;
-  font-weight:400;
+  font-weight:360;
+  font-size:1.5rem;
 }
 </style>
