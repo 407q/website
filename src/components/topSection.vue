@@ -63,15 +63,17 @@ a:hover img{
   outline:7px solid rgb(var(--fg));
 }
 h1{
-  margin-top:1em;
   margin-bottom:1.5rem;
   line-height:1.2em;
 }
 .sub{
+  margin-top:1rem;
   border:none;
   padding:0;
   text-align:center;
   font-weight:360;
   font-size:1.5rem;
+  display:block;
+  line-height:normal;
 }
 </style>
