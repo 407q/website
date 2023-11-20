@@ -8,6 +8,7 @@
         <skillsItem :icon="'simple-icons:adobexd'" :category="$t('category.design')" :title="'Adobe XD'"/>
         <skillsItem :icon="'simple-icons:adobeaftereffects'" :category="$t('category.video')" :title="'After Effects'"/>
         <skillsItem :icon="'simple-icons:googleappsscript'" :category="$t('category.programming')" :title="'Google Apps Script'"/>
+        <skillsItem :icon="'simple-icons:javascript'" :category="$t('category.programming')" :title="'JavaScript'"/>
         <skillsItem :icon="'simple-icons:python'" :category="$t('category.programming')" :title="'Python'"/>
         <skillsItem :icon="'simple-icons:vuedotjs'" :category="$t('category.web')" :title="'Vue.js'"/>
     </div>
