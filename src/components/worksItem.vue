@@ -1,5 +1,4 @@
 <script setup>
-    import {ref} from "vue";
     const props=defineProps({left:String,category:String,title:String,desc:String});
 </script>
 <template>
@@ -19,8 +18,10 @@
         height:calc((90vw - 1rem)/16*9);
     }
     img{
-        max-width:calc(90vw - 1rem);
-        justify-self:center;
+        width:calc(90vw - 1rem);
+    }
+    img:not(:hover){
+        max-height:calc((90vw - 1rem)/16*9);
     }
     .item{
         grid-auto-flow:row;
@@ -32,8 +33,11 @@
         height:180px;
     }
     img{
-        max-width:320px;
-        justify-self:center;
+        width:320px;
+        align-self:center;
+    }
+    img:not(:hover){
+        max-height:180px;
     }
     .item{
         grid-template-columns:320px auto;
@@ -77,5 +81,10 @@ p{
 .category{
     font-weight:450;
     font-size:1.2rem;
+}
+img{
+    justify-self:center;
+    transition:1s ease;
+    object-fit:cover;
 }
 </style>
