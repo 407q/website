@@ -19,9 +19,7 @@
     }
     img{
         width:calc(90vw - 1rem);
-    }
-    img:not(:hover){
-        max-height:calc((90vw - 1rem)/16*9);
+        height:calc((90vw - 1rem)/16*9);
     }
     .item{
         grid-auto-flow:row;
@@ -34,10 +32,8 @@
     }
     img{
         width:320px;
+        height:180px;
         align-self:center;
-    }
-    img:not(:hover){
-        max-height:180px;
     }
     .item{
         grid-template-columns:320px auto;
@@ -84,7 +80,6 @@ p{
 }
 img{
     justify-self:center;
-    transition:1s ease;
     object-fit:cover;
 }
 </style>

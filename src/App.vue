@@ -13,14 +13,24 @@ function scrollBack(){
 }
 onMounted(()=>{
   window.addEventListener("scroll",scroll);
+  window.addEventListener("beforeunload",function(){
+    window.scrollTo(0, 0);
+  });
 })
 </script>
 
 <template>
+  <topSection/>
   <main>
     <Transition><span class="back" :title="$t('backtotop')" @click="scrollBack" v-show="backShow"/></Transition>
-    <topSection/>
     <h2 id="about">About</h2>
+    <div class="avatar">
+      <img src="/img/icon.webp" alt="$t('alts.icon')" :title="$t('alts.icon')">
+      <p>
+        中村 栞<br>
+        <span class="sub">Shio Nakamura / 32ma.me</span>
+      </p>
+    </div>
     <p v-html="$t('about')"/>
     <h2 id="works">Works</h2>
     <worksSection/>
@@ -31,6 +41,19 @@ onMounted(()=>{
 </template>
 
 <style scoped>
+@media screen and (max-width:649px){
+  .avatar{
+    flex-direction:column;
+    text-align:center;
+    gap:0;
+  }
+}
+@media screen and (min-width:650px){
+  .avatar{
+    flex-direction:row;
+    gap:50px;
+  }
+}
 h2{
   font-size:2.5rem;
   text-align:center;
@@ -42,6 +65,35 @@ h2{
 }
 .v-enter-from,.v-leave-to {
   opacity: 0;
+}
+.avatar{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-block:1.5rem;
+}
+.avatar img{
+  border:0 solid rgb(var(--bg));
+  outline:3px solid rgb(var(--fg));
+  border-radius:50%;
+  width:150px;
+  height:150px;
+}
+.avatar p{
+  font-size:3rem;
+  font-weight:300;
+  line-height:1.2em;
+  margin-block:0;
+  margin-top:0.7rem;
+}
+.avatar p .sub{
+  margin-top:1rem;
+  border:none;
+  padding:0;
+  font-weight:360;
+  font-size:1.5rem;
+  display:block;
+  line-height:normal;
 }
 .back{
   position:fixed;

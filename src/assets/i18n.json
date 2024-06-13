@@ -5,8 +5,8 @@
         "about":"2007年、神奈川県で生まれる。S高等学校3期生、ユニヴァーサルデザイン検定初級 第1100号。<br>小学生の頃からPCを使ったものづくりを始め、2018年に「GPリーグ ヤマハ発動機プログラミングコロシアム 神奈川県大会」で予選・本選を優勝。<br>現在はグラフィックデザインを中心に、映像制作、作曲、Web制作など幅広い分野を横断的に取り組んでいる。制作のモットーは「みんなにやさしく」。",
         "works":{
             "showreel2022":{
-                "title":"ShowREEL 2022",
-                "desc":"2022年11月までに作った映像作品をまとめたものです。これ以降はあまり作品としての映像を作れていません…。"
+                "title":"20secreel",
+                "desc":"2023年から2024年前半にかけて制作した映像を20秒でまとめたものです。数が少ないですね……。"
             },
             "machida-cf2023":{
                 "title":"町田キャンフェス2023 特設サイト",
@@ -21,6 +21,10 @@
         },
         "contacts":{
             "mail":"メール"
+        },
+        "alts":{
+            "logo":"ロゴ",
+            "icon":"プロフィール画像"
         }
     },
     "en":{
@@ -29,12 +33,12 @@
         "about":"Born in 2007 in Kanagawa, Japan, Shio is a 3rd year student in S High School, pursuing an IAUD Elementary Certificate for Universal Design No.1100.<br>Shio started their creative work in elementary school. They won the first place in &quot;GP League Yamaha Motor Programming Colosseum Kanagawa prefectural tournament&quot; in 2018.<br>Currently, Shio works in a wide range of fields, such as graphic design, video production, music composition, web production and more. Their production motto:  &quot;Everyone-Friendly&quot;.",
         "works":{
             "showreel2022":{
-                "title":"ShowREEL 2022",
-                "desc":"The showreel of my video productions until November 2022. After that, I didn't make many videos...."
+                "title":"20secreel",
+                "desc":"The 20-seconds showreel of my video productions in 2023 and early 2024. There're only a few..."
             },
             "machida-cf2023":{
                 "title":"Machida Campus Festival 2023 Special Website",
-                "desc":"The website that was made for a kind of my school festival. I not only made the website with Vue, but also designed the floor maps and the signboard with Illustrator, and took some photos for the website. *The background image has been replaced due to portrait rights."
+                "desc":"The website that was made for a kind of my school festival. I not only made the website with Vue, but also designed the floor maps and the signboard with Illustrator, and took some photos for the website."
             }
         },
         "category":{
@@ -45,6 +49,10 @@
         },
         "contacts":{
             "mail":"E-mail"
+        },
+        "alts":{
+            "logo":"Logo",
+            "icon":"Avatar"
         }
     }
 }

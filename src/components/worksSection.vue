@@ -4,7 +4,7 @@
 
 <template>
     <div class="list">
-        <worksItem :left="'iframe|https://www.youtube.com/embed/x37vXM_rio4'" :category="$t('category.video')" :title="$t('works.showreel2022.title')" :desc="$t('works.showreel2022.desc')"/>
+        <worksItem :left="'iframe|https://www.youtube.com/embed/xQjDyNvoreY'" :category="$t('category.video')" :title="$t('works.showreel2022.title')" :desc="$t('works.showreel2022.desc')"/>
         <worksItem :left="'img|/img/machida-cf2023.webp'" :category="$t('category.web')" :title="$t('works.machida-cf2023.title')" :desc="$t('works.machida-cf2023.desc')"/>
     </div>
 </template>
