@@ -22,7 +22,7 @@ html{
 body{
     color:rgb(var(--fg));
     background:rgb(var(--bg));
-    margin:0;
+    margin:0 !important;
 }
 main{
     overflow-wrap:break-word;
