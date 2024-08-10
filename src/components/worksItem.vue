@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    const props=defineProps({left:String,category:String,title:String,desc:String});
+    const props=defineProps({left:{type:String,required:true},category:String,title:String,desc:String});
 </script>
 <template>
     <div class="item">
