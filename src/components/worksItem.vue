@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
     const props=defineProps({left:String,category:String,title:String,desc:String});
 </script>
 <template>

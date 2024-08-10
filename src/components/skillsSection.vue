@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
     import skillsItem from "./skillsItem.vue";
 </script>
 
