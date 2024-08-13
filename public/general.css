@@ -95,6 +95,7 @@ code{
 }
 code span{
     display:block;
+    position:absolute;
     width:fit-content;
     color:#ffffff;
     background:#707070;
@@ -108,4 +109,5 @@ pre{
     padding:10px;
     border-radius:10px;
     background:#605f52;
+    overflow:scroll;
 }
