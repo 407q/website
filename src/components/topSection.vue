@@ -56,6 +56,7 @@ img.bg{
   object-fit:cover;
   opacity:0.3;
   position:absolute;
+  border-radius:0;
 }
 .wrapper{
   display:flex;
