@@ -17,7 +17,7 @@
 html{
     font-family:"Noto Sans JP",sans-serif;
     font-size:18px;
-    letter-spacing:.02em;
+    letter-spacing:.03em;
 }
 body{
     color:rgb(var(--fg));

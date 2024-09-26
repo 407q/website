@@ -1,28 +1,14 @@
 <script setup lang="ts">
-import {ref,onMounted} from "vue";
 import topSection from "../components/topSection.vue";
 import worksSection from "../components/worksSection.vue";
 import skillsSection from "../components/skillsSection.vue";
 import footerComp from "../components/footerComp.vue";
-const backShow=ref<boolean>();
-function scroll(){
-  backShow.value=(window.scrollY>=window.innerHeight/3);
-}
-function scrollBack(){
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-onMounted(()=>{
-  window.addEventListener("scroll",scroll);
-  window.addEventListener("beforeunload",function(){
-    window.scrollTo(0, 0);
-  });
-})
+import postsListComp from "../components/postsListComp.vue"
 </script>
 
 <template>
   <topSection/>
   <main>
-    <Transition><span class="back" :title="$t('backtotop')" @click="scrollBack" v-show="backShow"/></Transition>
     <h2 id="about">About</h2>
     <div class="avatar">
       <img src="/img/icon.webp" alt="$t('alts.icon')" :title="$t('alts.icon')">
@@ -36,6 +22,9 @@ onMounted(()=>{
     <worksSection/>
     <h2 id="skills">Skills</h2>
     <skillsSection/>
+    <h2 id="posts">Posts</h2>
+    <postsListComp :num="4"/>
+    <p style="text-align:center"><RouterLink to="/posts">{{$t("posts.seemore")}}</RouterLink></p>
   </main>
   <footerComp/>
 </template>
@@ -59,12 +48,6 @@ h2{
   text-align:center;
   font-weight:500;
   margin-top:3rem;
-}
-.v-enter-active,.v-leave-active {
-  transition: opacity 0.2s ease;
-}
-.v-enter-from,.v-leave-to {
-  opacity: 0;
 }
 .avatar{
   display:flex;

@@ -22,6 +22,14 @@
         "contacts":{
             "mail":"メール"
         },
+        "posts":{
+            "head":"投稿一覧",
+            "seemore":"もっと見る",
+            "publishedat":"公開日:",
+            "updatedat":"更新日:",
+            "back":"投稿一覧に戻る",
+            "backtop":"トップページ"
+        },
         "alts":{
             "logo":"ロゴ",
             "icon":"プロフィール画像"
@@ -49,6 +57,14 @@
         },
         "contacts":{
             "mail":"E-mail"
+        },
+        "posts":{
+            "head":"Posts",
+            "seemore":"See more...",
+            "publishedat":"Published at",
+            "updatedat":"Updated at",
+            "back":"Back to Posts",
+            "backtop":"Top page"
         },
         "alts":{
             "logo":"Logo",

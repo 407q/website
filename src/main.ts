@@ -4,6 +4,7 @@ import App from './App.vue'
 import { Icon } from '@iconify/vue'
 import i18nJson from './assets/i18n.json'
 import { createWebHistory, createRouter } from 'vue-router'
+import "budoux/module/webcomponents/budoux-ja";
 
 const i18n=createI18n({
     locale:navigator.language.split("-")[0],
@@ -20,8 +21,15 @@ const router=createRouter({
         },
         {
             path:"/404",
-            name:"notfound",
             component:()=>import("@/pages/404.vue")
+        },
+        {
+            path:"/posts",
+            component:()=>import("@/pages/posts/index.vue")
+        },
+        {
+            path:"/posts/:id",
+            component:()=>import("@/pages/posts/post.vue")
         },
         {
             path:"/:pathMatch(.*)*",
