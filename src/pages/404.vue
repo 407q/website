@@ -2,7 +2,10 @@
     <main>
         <div class="wrapper">
             <h1>404</h1>
-            <p>ページが見つかりません / Page Not Found</p>
+            <p>
+                ページが見つかりません / Page Not Found<br>
+                <RouterLink to="/">←TOP</RouterLink>
+            </p>
         </div>
     </main>
 </template>
