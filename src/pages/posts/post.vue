@@ -1,30 +1,41 @@
 <script setup lang="ts">
-import {ref} from "vue";
-import {useRoute} from "vue-router";
+import {ref,watch} from "vue";
+import {useRoute,useRouter} from "vue-router";
 import {format,isSameDay} from "date-fns";
 import {createClient} from "microcms-js-sdk";
 import footerComp from "@/components/footerComp.vue";
 import type {Post} from "@/types/cms"
 import type {Ref} from "vue";
 const route=useRoute();
-const client=createClient({serviceDomain:"32m",apiKey:import.meta.env.VITE_MICROCMS_KEY});
+const client=createClient({serviceDomain:"32m",apiKey:import.meta.env.VITE_MICROCMS_KEY,retry:true});
 const post:Ref<Post,Post>=ref({
     id:route.params.id as string,
     createdAt:"",
-    updatedAt:"1970-01-01T00:00:00.000Z",
-    publishedAt:"1970-01-01T00:00:00.000Z",
+    updatedAt:"",
+    publishedAt:"",
     revisedAt:"",
     title:"",
     content:""
 });
-const respData=client.get({endpoint:"blogs",contentId:route.params.id as string}).then(res=>{post.value=res;console.log(post.value);return res});
+const respData=client.get({endpoint:"blogs",contentId:route.params.id as string}).then(res=>{post.value=res;return res},err=>{
+    if(err.message=="fetch API response status: 404"){
+        router.push("/404");
+    }
+});
+const router=useRouter();
+watch(post,(postData:Post)=>{
+    document.title=`${postData.title}`;
+});
 </script>
 <template>
     <p style="margin-bottom:none;margin-left:1rem;"><RouterLink to="/posts">←{{$t("posts.back")}}</RouterLink></p>
     <main>
-        <h1>{{post.title}}</h1>
-        <p>{{$t("posts.publishedat")}} {{format(post.publishedAt,"yyy/M/d")}}{{isSameDay(post.updatedAt,post.publishedAt)?"":` (${$t("posts.updatedat")} ${format(post.updatedAt,"yyy/M/d")})`}}</p>
-        <budoux-ja v-html="post.content"/>
+        <p style="text-align:center" v-if="post.publishedAt==''">{{$t("posts.loading")}}</p>
+        <div v-else>
+            <h1>{{post.title}}</h1>
+            <p>{{$t("posts.publishedat")}} {{format(post.publishedAt,"yyy/M/d")}}{{isSameDay(post.updatedAt,post.publishedAt)?"":` (${$t("posts.updatedat")} ${format(post.updatedAt,"yyy/M/d")})`}}</p>
+            <budoux-ja v-html="post.content"/>
+        </div>
     </main>
     <footerComp/>
 </template>

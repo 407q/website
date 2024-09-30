@@ -28,11 +28,16 @@
             "publishedat":"公開日:",
             "updatedat":"更新日:",
             "back":"投稿一覧に戻る",
-            "backtop":"トップページ"
+            "backtop":"トップページ",
+            "loading":"読み込み中…"
         },
         "alts":{
             "logo":"ロゴ",
             "icon":"プロフィール画像"
+        },
+        "title":{
+            "notfound":"ページが見つかりません",
+            "posts":"投稿一覧"
         }
     },
     "en":{
@@ -64,11 +69,16 @@
             "publishedat":"Published at",
             "updatedat":"Updated at",
             "back":"Back to Posts",
-            "backtop":"Top page"
+            "backtop":"Top page",
+            "loading":"Loading..."
         },
         "alts":{
             "logo":"Logo",
             "icon":"Avatar"
+        },
+        "title":{
+            "notfound":"Page not found",
+            "posts":"Posts"
         }
     }
 }

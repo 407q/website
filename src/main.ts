@@ -21,11 +21,13 @@ const router=createRouter({
         },
         {
             path:"/404",
-            component:()=>import("@/pages/404.vue")
+            component:()=>import("@/pages/404.vue"),
+            name:"notfound"
         },
         {
             path:"/posts",
-            component:()=>import("@/pages/posts/index.vue")
+            component:()=>import("@/pages/posts/index.vue"),
+            name:"posts"
         },
         {
             path:"/posts/:id",
@@ -37,6 +39,10 @@ const router=createRouter({
         }
     ]
 });
+
+router.afterEach((to)=>{
+    document.title=to.name?`${i18n.global.t(`title.${to.name as string}`)} | 32ma.me`:"32ma.me / Shio Nakamura"
+})
 
 const app=createApp(App)
 app.component("Icon",Icon)

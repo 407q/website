@@ -5,12 +5,13 @@ import {createClient} from "microcms-js-sdk";
 import type {Posts} from "@/types/cms"
 import type {Ref} from "vue";
 defineProps({num:Number});
-const client=createClient({serviceDomain:"32m",apiKey:import.meta.env.VITE_MICROCMS_KEY});
+const client=createClient({serviceDomain:"32m",apiKey:import.meta.env.VITE_MICROCMS_KEY,retry:true});
 const posts:Ref<Posts,Posts>=ref([]);
-const respData=client.get({endpoint:"blogs"}).then(res=>{posts.value=res.contents;console.log(posts.value);return res});
+const respData=client.get({endpoint:"blogs"}).then(res=>{posts.value=res.contents;return res});
 </script>
 <template>
-    <div class="posts">
+    <p style="text-align:center;" v-if="posts.length==0">{{$t("posts.loading")}}</p>
+    <div v-else class="posts">
         <div class="post" v-for="post in (num&&num<posts.length)?posts.slice(0,num):posts">
             <RouterLink :to="`/posts/${post.id}`">
                 <h3>{{post.title}}</h3>
