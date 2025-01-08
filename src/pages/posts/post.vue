@@ -30,10 +30,10 @@ watch(post,(postData:Post)=>{
 <template>
     <p style="margin-bottom:none;margin-left:1rem;"><RouterLink to="/posts">←{{$t("posts.back")}}</RouterLink></p>
     <main>
-        <p style="text-align:center" v-if="post.publishedAt==''">{{$t("posts.loading")}}</p>
+        <p style="text-align:center" v-if="post.publishedAt==''">Loading...</p>
         <div v-else>
             <h1>{{post.title}}</h1>
-            <p>{{$t("posts.publishedat")}} {{format(post.publishedAt,"yyy/M/d")}}{{isSameDay(post.updatedAt,post.publishedAt)?"":` (${$t("posts.updatedat")} ${format(post.updatedAt,"yyy/M/d")})`}}</p>
+            <p>{{format(post.publishedAt,"yyy/M/d")}}{{isSameDay(post.updatedAt,post.publishedAt)?"":` (最終更新: ${format(post.updatedAt,"yyy/M/d")})`}}</p>
             <budoux-ja v-html="post.content"/>
         </div>
     </main>

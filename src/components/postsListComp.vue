@@ -10,7 +10,7 @@ const posts:Ref<Posts,Posts>=ref([]);
 const respData=client.get({endpoint:"blogs"}).then(res=>{posts.value=res.contents;return res});
 </script>
 <template>
-    <p style="text-align:center;" v-if="posts.length==0">{{$t("posts.loading")}}</p>
+    <p style="text-align:center;" v-if="posts.length==0">Loading...</p>
     <div v-else class="posts">
         <div class="post" v-for="post in (num&&num<posts.length)?posts.slice(0,num):posts">
             <RouterLink :to="`/posts/${post.id}`">

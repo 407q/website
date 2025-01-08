@@ -4,7 +4,7 @@ import footerComp from "@/components/footerComp.vue";
 </script>
 <template>
     <main>
-        <h1>{{$t("posts.head")}}</h1>
+        <h1>Blog</h1>
         <p style="text-align:center"><RouterLink to="/">{{$t("posts.backtop")}}</RouterLink></p>
         <postsListComp/>
     </main>

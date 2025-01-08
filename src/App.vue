@@ -16,7 +16,7 @@ onMounted(()=>{
 </script>
 <template>
     <RouterView/>
-    <Transition><span class="back" :title="$t('backtotop')" @click="scrollBack" v-show="backShow"/></Transition>
+    <Transition><span class="back" title="一番上に戻ります" @click="scrollBack" v-show="backShow"/></Transition>
 </template>
 <style scoped>
 .v-enter-active,.v-leave-active {
