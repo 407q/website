@@ -3,7 +3,6 @@ import {ref,watch} from "vue";
 import {useRoute,useRouter} from "vue-router";
 import {format,isSameDay} from "date-fns";
 import {createClient} from "microcms-js-sdk";
-import footerComp from "@/components/footerComp.vue";
 import type {Post} from "@/types/cms"
 import type {Ref} from "vue";
 const route=useRoute();
@@ -28,14 +27,22 @@ watch(post,(postData:Post)=>{
 });
 </script>
 <template>
-    <p style="margin-bottom:none;margin-left:1rem;"><RouterLink to="/posts">←{{$t("posts.back")}}</RouterLink></p>
     <main>
-        <p style="text-align:center" v-if="post.publishedAt==''">Loading...</p>
-        <div v-else>
-            <h1>{{post.title}}</h1>
-            <p>{{format(post.publishedAt,"yyy/M/d")}}{{isSameDay(post.updatedAt,post.publishedAt)?"":` (最終更新: ${format(post.updatedAt,"yyy/M/d")})`}}</p>
-            <budoux-ja v-html="post.content"/>
-        </div>
+        <Transition>
+            <p style="text-align:center" v-if="post.publishedAt==''">Loading...</p>
+            <div v-else>
+                <h1>{{post.title}}</h1>
+                <p style="margin-top:0;text-align:center;font-weight:300">{{format(post.publishedAt,"yyy/M/d")}}{{isSameDay(post.updatedAt,post.publishedAt)?"":` (最終更新: ${format(post.updatedAt,"yyy/M/d")})`}}</p>
+                <budoux-ja v-html="post.content"/>
+            </div>
+        </Transition>
     </main>
-    <footerComp/>
 </template>
+<style scoped>
+.v-enter-active{
+  transition: opacity 0.2s ease;
+}
+.v-enter-from{
+  opacity: 0;
+}
+</style>

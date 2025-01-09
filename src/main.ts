@@ -18,13 +18,28 @@ const router=createRouter({
             name:"404 / ページが見つかりません"
         },
         {
-            path:"/posts",
-            component:()=>import("@/pages/posts/index.vue"),
+            path:"/about",
+            component:()=>import("@/pages/about.vue"),
+            name:"About"
+        },
+        {
+            path:"/blogs",
+            component:()=>import("@/pages/blogs/index.vue"),
             name:"Blogs"
         },
         {
-            path:"/posts/:id",
-            component:()=>import("@/pages/posts/post.vue")
+            path:"/blogs/:id",
+            component:()=>import("@/pages/blogs/post.vue")
+        },
+        {
+            path:"/skills",
+            component:()=>import("@/pages/skills.vue"),
+            name:"Skills"
+        },
+        {
+            path:"/links",
+            component:()=>import("@/pages/links.vue"),
+            name:"Links"
         },
         {
             path:"/:pathMatch(.*)*",

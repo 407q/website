@@ -3,8 +3,7 @@
         <div class="wrapper">
             <h1>404</h1>
             <p>
-                ページが見つかりません / Page Not Found<br>
-                <RouterLink to="/">←TOP</RouterLink>
+                ページが見つかりません。上のバーから探してください。
             </p>
         </div>
     </main>

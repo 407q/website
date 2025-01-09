@@ -4,23 +4,34 @@ import {format} from "date-fns";
 import {createClient} from "microcms-js-sdk";
 import type {Posts} from "@/types/cms"
 import type {Ref} from "vue";
-defineProps({num:Number});
 const client=createClient({serviceDomain:"32m",apiKey:import.meta.env.VITE_MICROCMS_KEY,retry:true});
 const posts:Ref<Posts,Posts>=ref([]);
 const respData=client.get({endpoint:"blogs"}).then(res=>{posts.value=res.contents;return res});
 </script>
 <template>
-    <p style="text-align:center;" v-if="posts.length==0">Loading...</p>
-    <div v-else class="posts">
-        <div class="post" v-for="post in (num&&num<posts.length)?posts.slice(0,num):posts">
-            <RouterLink :to="`/posts/${post.id}`">
-                <h3>{{post.title}}</h3>
-                <p>{{format(post.publishedAt,"yyy/M/d hh:mm")}}</p>
-            </RouterLink>
-        </div>
-    </div>
+    <main>
+        <h1>Blogs</h1>
+        <p style="margin-top:0;text-align:center;font-weight:300">ブログ</p>
+        <Transition>
+            <p style="text-align:center;" v-if="posts.length==0">Loading...</p>
+            <div v-else class="posts">
+                <div class="post" v-for="post in posts">
+                    <RouterLink :to="`/blogs/${post.id}`">
+                        <h3>{{post.title}}</h3>
+                        <p>{{format(post.publishedAt,"yyy/M/d hh:mm")}}</p>
+                    </RouterLink>
+                </div>
+            </div>
+        </Transition>
+    </main>
 </template>
 <style scoped>
+.v-enter-active{
+  transition: opacity 0.2s ease;
+}
+.v-enter-from{
+  opacity: 0;
+}
 .posts{
     display:flex;
     flex-direction:column;
@@ -33,15 +44,11 @@ a{
 }
 .post{
     width:85%;
-    background:rgb(var(--bg));
-    border-radius:10px;
     padding:0.2rem 1rem;
-    filter:drop-shadow(0 0 5px rgba(var(--fg),.5));
-    transition:.3s ease-out;
+    transition:.2s ease;
 }
 .post:hover{
     transform:scale(1.01);
-    filter:drop-shadow(0 0 10px rgba(var(--fg),.5));
 }
 h3{
     border:none;

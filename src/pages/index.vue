@@ -1,110 +1,103 @@
-<script setup lang="ts">
-import topSection from "../components/topSection.vue";
-import worksSection from "../components/worksSection.vue";
-import skillsSection from "../components/skillsSection.vue";
-import footerComp from "../components/footerComp.vue";
-import postsListComp from "../components/postsListComp.vue"
-</script>
-
 <template>
-  <topSection/>
   <main>
-    <h2 id="about">About</h2>
-    <div class="avatar">
-      <img src="/img/icon.webp" alt="$t('alts.icon')" :title="$t('alts.icon')">
-      <p>
-        中村 栞<br>
-        <span class="sub">Shio Nakamura / 32ma.me</span>
-      </p>
+    <img src="/img/avatar.webp">
+    <div>
+      <svg viewBox="0 0 242.6 153"><use href="/img/logo.svg#logo"/></svg>
+      <h1>
+        中村 栞 <wbr><span class="sub">Shio Nakamura</span>
+      </h1>
+      <div class="nav">
+        <RouterLink to="/about"><h3>About</h3> 自己紹介</RouterLink>
+        <RouterLink to="/blogs"><h3>Blogs</h3> ブログ</RouterLink>
+        <RouterLink to="/skills"><h3>Skills</h3> 資格・できること</RouterLink>
+        <RouterLink to="/links"><h3>Links</h3> SNS等</RouterLink>
+      </div>
     </div>
-    <p v-html="$t('about')"/>
-    <h2 id="works">Works</h2>
-    <worksSection/>
-    <h2 id="skills">Skills</h2>
-    <skillsSection/>
-    <h2 id="posts">Posts</h2>
-    <postsListComp :num="4"/>
-    <p style="text-align:center"><RouterLink to="/posts">{{$t("posts.seemore")}}</RouterLink></p>
   </main>
-  <footerComp/>
 </template>
 
 <style scoped>
-@media screen and (max-width:649px){
-  .avatar{
+@media screen and (max-width:749px){
+  main{
     flex-direction:column;
-    text-align:center;
-    gap:0;
+    gap:20px;
+    min-height:calc(100vh - 1rem - 55px);
   }
 }
-@media screen and (min-width:650px){
-  .avatar{
+@media screen and (min-width:750px){
+  main{
     flex-direction:row;
     gap:50px;
+    min-height:calc(100vh - 55px);
   }
 }
-h2{
-  font-size:2.5rem;
-  text-align:center;
-  font-weight:500;
-  margin-top:3rem;
-}
-.avatar{
+main{
   display:flex;
   justify-content:center;
   align-items:center;
-  margin-block:1.5rem;
-}
-.avatar img{
-  border:0 solid rgb(var(--bg));
-  outline:3px solid rgb(var(--fg));
-  border-radius:50%;
-  width:150px;
-  height:150px;
-}
-.avatar p{
-  font-size:3rem;
-  font-weight:300;
-  line-height:1.2em;
-  margin-block:0;
-  margin-top:0.7rem;
-}
-.avatar p .sub{
-  margin-top:1rem;
-  border:none;
   padding:0;
-  font-weight:360;
+}
+img{
+  max-height:30rem;
+  border-radius:5px;
+}
+svg{
+  display:block;
+  height:6rem;
+}
+h1{
+  text-align:left;
+  display:inline-flex;
+  align-items:baseline;
+  flex-wrap:wrap;
+  gap:.25em;
+  line-height:2rem;
+  font-size:2.5rem;
+  font-weight:300;
+  margin-block:.5rem 1.5rem;
+}
+h1 .sub{
   font-size:1.5rem;
-  display:block;
-  line-height:normal;
 }
-.back{
-  position:fixed;
-  bottom:5vh;
-  right:5vw;
-  width:50px;
-  height:50px;
-  display:block;
-  background:rgba(var(--bg),.7);
-  border-radius:25px;
-  border:1px solid rgba(var(--fg),.5);
-  cursor:pointer;
-  
+h3{
+  display:inline;
+  font-family:"tt-commons-pro",sans-serif;
 }
-.back::after{
-  display:block;
+.nav{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:.7rem;
+  margin-bottom:.9rem;
+}
+a{
+  font-weight:300;
+  height:2.5rem;
+  line-height:1.5em;
+  display:inline-block;
+  margin-right:auto;
+  text-decoration:none;
+  transition:none;
+}
+a::after{
   content:"";
-  width:15px;
-  height:15px;
-  border-left:3px solid rgb(var(--fg));
-  border-top:3px solid rgb(var(--fg));
-  transform:translate(16px,20px) rotate(45deg);
-  transition:.3s;
+  position:relative;
+  bottom:.9rem;
+  display:inline-block;
+  height:1px;
+  width:0px;
+  background:rgb(var(--fg));
+  transition:.2s;
 }
-.back:hover{
-  background:rgb(var(--bg));
+a:hover{
+    opacity:1;
 }
-.back:hover::after{
-  transform:translate(16px,17px) rotate(45deg);
+a:hover::after{
+    width:100%;
+}
+h3{
+  display:inline;
+
 }
 </style>
