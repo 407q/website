@@ -20,10 +20,6 @@
                 <p>Keybase …… <a href="https://keybase.io/32ma_me">32ma_me</a></p>
             </div>
             <div class="block">
-                <Icon icon="fa6-brands:discord"/>
-                <p>Discord …… @32ma.me</p>
-            </div>
-            <div class="block">
                 <Icon icon="fa6-solid:envelope"/>
                 <p>メール …… <a href="mailto:contact@32ma.me">contact@32ma.me</a></p>
             </div>
