@@ -1,11 +1,10 @@
 export interface Post{
     id:string,
     createdAt:string,
+    publishedAt?:string,
     updatedAt:string,
-    publishedAt:string,
-    revisedAt:string,
+    revisedAt?:string,
     title:string,
-    content:string,
-    eyecatch?:string
+    content:string
 }
 export type Posts=Post[]

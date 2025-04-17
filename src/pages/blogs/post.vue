@@ -28,6 +28,7 @@ const respData=client.get({
         router.push("/404");
     }
     return err;
+//}).then(res=>{console.log(res)//use on dev
 });
 const router=useRouter();
 watch(post,(postData:Post)=>{
@@ -40,7 +41,7 @@ watch(post,(postData:Post)=>{
             <p style="text-align:center" v-if="post.publishedAt==''">Loading...</p>
             <div v-else>
                 <h1>{{post.title}}</h1>
-                <p style="margin-top:0;text-align:center;font-weight:300">{{format(post.publishedAt,"yyy/M/d")}}{{isSameDay(post.updatedAt,post.publishedAt)?"":` (最終更新: ${format(post.updatedAt,"yyy/M/d")})`}}</p>
+                <p style="margin-top:0;text-align:center;font-weight:300">{{format(post.publishedAt||post.createdAt,"yyy/M/d")}}{{post.updatedAt&&!isSameDay(post.updatedAt,post.publishedAt||post.createdAt)?` (最終更新: ${format(post.updatedAt,"yyy/M/d")})`:""}}</p>
                 <budoux-ja v-html="post.content"/>
             </div>
         </Transition>
