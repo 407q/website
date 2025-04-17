@@ -16,10 +16,18 @@ const post:Ref<Post,Post>=ref({
     title:"",
     content:""
 });
-const respData=client.get({endpoint:"blogs",contentId:route.params.id as string}).then(res=>{post.value=res;return res},err=>{
+const respData=client.get({
+    endpoint:"blogs",
+    contentId:route.params.id as string,
+    queries:{draftKey:new URLSearchParams(location.search).get("draftKey")||""}
+}).then(res=>{
+    post.value=res;
+    return res;
+},err=>{
     if(err.message=="fetch API response status: 404"){
         router.push("/404");
     }
+    return err;
 });
 const router=useRouter();
 watch(post,(postData:Post)=>{
