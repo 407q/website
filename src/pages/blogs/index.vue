@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ref} from "vue";
-import {format} from "date-fns";
+import {format,isSameDay} from "date-fns";
 import {createClient} from "microcms-js-sdk";
 import type {Posts} from "@/types/cms"
 import type {Ref} from "vue";
@@ -18,7 +18,7 @@ const respData=client.get({endpoint:"blogs"}).then(res=>{posts.value=res.content
                 <div class="post" v-for="post in posts">
                     <RouterLink :to="`/blogs/${post.id}`">
                         <h3>{{post.title}}</h3>
-                        <p>{{format(post.publishedAt,"yyy/M/d hh:mm")}}</p>
+                        <p>{{format(post.publishedAt||post.createdAt,"yyy/M/d")}}{{post.updatedAt&&!isSameDay(post.updatedAt,post.publishedAt||post.createdAt)?` (最終更新: ${format(post.updatedAt,"yyy/M/d")})`:""}}</p>
                     </RouterLink>
                 </div>
             </div>
