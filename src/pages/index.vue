@@ -1,16 +1,16 @@
 <template>
   <main>
-    <img src="/img/avatar.webp">
+    <img alt="32ma.me / Shio Nakamura" src="/img/avatar.webp">
     <div>
       <svg viewBox="0 0 242.6 153"><use href="/img/logo.svg#logo"/></svg>
       <h1>
         中村 栞 <wbr><span class="sub">Shio Nakamura</span>
       </h1>
       <div class="nav">
-        <RouterLink to="/about"><h3>About</h3> 自己紹介</RouterLink>
-        <RouterLink to="/blogs"><h3>Blogs</h3> ブログ</RouterLink>
-        <RouterLink to="/skills"><h3>Skills</h3> 資格・できること</RouterLink>
-        <RouterLink to="/links"><h3>Links</h3> SNS等</RouterLink>
+        <RouterLink to="/about"><h2>About</h2> 自己紹介</RouterLink>
+        <RouterLink to="/blogs"><h2>Blogs</h2> ブログ</RouterLink>
+        <RouterLink to="/skills"><h2>Skills</h2> 資格・できること</RouterLink>
+        <RouterLink to="/links"><h2>Links</h2> SNS等</RouterLink>
       </div>
     </div>
   </main>
@@ -59,7 +59,7 @@ h1{
 h1 .sub{
   font-size:1.5rem;
 }
-h3{
+h2{
   display:inline;
   font-family:"tt-commons-pro",sans-serif;
 }
@@ -95,9 +95,5 @@ a:hover{
 }
 a:hover::after{
     width:100%;
-}
-h3{
-  display:inline;
-
 }
 </style>
