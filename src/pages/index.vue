@@ -62,6 +62,8 @@ h1 .sub{
 h2{
   display:inline;
   font-family:"tt-commons-pro",sans-serif;
+  font-size:1.5rem;
+  font-weight:500;
 }
 .nav{
   display:flex;
