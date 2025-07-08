@@ -19,14 +19,14 @@ const route=useRoute();
 <template>
     <Transition>
       <header v-if="route.path!='/'">
-        <svg viewBox="0 0 242.6 153"><use href="/img/logo.svg#logo"/></svg>
-          <div>
+        <svg viewBox="0 0 242.6 153" aria-label="32ma.me ロゴ"><use href="/img/logo.svg#logo"/></svg>
+          <nav>
             <RouterLink to="/">Home</RouterLink>
             <RouterLink to="/about" title="自己紹介">About</RouterLink>
             <RouterLink to="/blogs" title="ブログ">Blogs</RouterLink>
             <RouterLink to="/skills" title="資格・できること">Skills</RouterLink>
             <RouterLink to="/links" title="SNS等">Links</RouterLink>
-          </div>
+          </nav>
       </header>
     </Transition>
     <RouterView v-slot="{Component}">
@@ -34,7 +34,17 @@ const route=useRoute();
         <component :is="Component"/>
       </Transition>
     </RouterView>
-    <Transition><span class="back" title="一番上に戻ります" @click="scrollBack" v-show="backShow"/></Transition>
+    <Transition>
+      <button 
+        class="back" 
+        @click="scrollBack" 
+        v-show="backShow"
+        aria-label="ページの先頭に戻る"
+        type="button"
+      >
+        <span class="sr-only">ページの先頭に戻る</span>
+      </button>
+    </Transition>
     <footer>
         <p>Copyright © 2023-{{new Date().getFullYear()}} Shio Nakamura</p>
     </footer>
@@ -78,6 +88,15 @@ header svg{
   height:3.5rem;
 }
 header div{
+    display:flex;
+    height:1rem;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:.7rem;
+    margin-bottom:.9rem;
+}
+/* navタグに変更 */
+header nav{
     display:flex;
     height:1rem;
     justify-content:center;
@@ -132,9 +151,9 @@ header a:hover::after{
   display:block;
   background:rgba(var(--bg),.7);
   border-radius:25px;
-  border:1px solid rgba(var(--fg),.5);
+  border:1px solid rgba(var(--fg),0);
   cursor:pointer;
-  
+  transition:.1s;
 }
 .back::after{
   display:block;
@@ -143,16 +162,28 @@ header a:hover::after{
   height:15px;
   border-left:3px solid rgb(var(--fg));
   border-top:3px solid rgb(var(--fg));
-  transform:translate(16px,20px) rotate(45deg);
-  transition:.3s;
+  transform:translate(10px,7px) rotate(45deg);
+  transition:.2s;
 }
 .back:hover{
   background:rgb(var(--bg));
+  border-color:rgba(var(--fg),.5);
 }
 .back:hover::after{
-  transform:translate(16px,17px) rotate(45deg);
+  transform:translate(10px,4px) rotate(45deg);
 }
 footer p{
   font-family:"tt-commons-pro",sans-serif;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 </style>

@@ -38,12 +38,15 @@ watch(post,(postData:Post)=>{
 <template>
     <main>
         <Transition>
-            <p style="text-align:center" v-if="post.publishedAt==''">Loading...</p>
-            <div v-else>
+            <div v-if="post.publishedAt==''" role="status" aria-live="polite">
+                <p style="text-align:center">Loading...</p>
+                <span class="sr-only">記事を読み込んでいます</span>
+            </div>
+            <article v-else>
                 <h1>{{post.title}}</h1>
                 <p style="margin-top:0;text-align:center;font-weight:300">{{format(post.publishedAt||post.createdAt,"yyy/M/d")}}{{post.updatedAt&&!isSameDay(post.updatedAt,post.publishedAt||post.createdAt)?` (最終更新: ${format(post.updatedAt,"yyy/M/d")})`:""}}</p>
                 <budoux-ja v-html="post.content"/>
-            </div>
+            </article>
         </Transition>
     </main>
 </template>
@@ -53,5 +56,16 @@ watch(post,(postData:Post)=>{
 }
 .v-enter-from{
   opacity: 0;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 </style>

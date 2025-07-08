@@ -1,17 +1,17 @@
 <template>
   <main>
-    <img alt="32ma.me / Shio Nakamura" src="/img/avatar.webp">
+    <img alt="プロフィール写真" src="/img/avatar.webp">
     <div>
-      <svg viewBox="0 0 242.6 153"><use href="/img/logo.svg#logo"/></svg>
+      <svg viewBox="0 0 242.6 153" aria-label="32ma.me ロゴ"><use href="/img/logo.svg#logo"/></svg>
       <h1>
         中村 栞 <wbr><span class="sub">Shio Nakamura</span>
       </h1>
-      <div class="nav">
+      <nav aria-label="メインナビゲーション">
         <RouterLink to="/about"><h2>About</h2> 自己紹介</RouterLink>
         <RouterLink to="/blogs"><h2>Blogs</h2> ブログ</RouterLink>
         <RouterLink to="/skills"><h2>Skills</h2> 資格・できること</RouterLink>
         <RouterLink to="/links"><h2>Links</h2> SNS等</RouterLink>
-      </div>
+      </nav>
     </div>
   </main>
 </template>
@@ -65,7 +65,7 @@ h2{
   font-size:1.5rem;
   font-weight:500;
 }
-.nav{
+nav{
   display:flex;
   flex-direction:column;
   justify-content:center;
