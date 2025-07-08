@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
+    "dev": "op run --env-file=.env -- vite",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "op run --env-file=.env -- vite preview"
   },
   "dependencies": {
     "@iconify/vue": "^4.1.1",
