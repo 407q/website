@@ -27,7 +27,7 @@ body{
 main{
     overflow-wrap:break-word;
     margin-inline:auto;
-    width:min(800px,90vw);
+    width:min(1000px,90vw);
 }
 footer{
     display:flex;
