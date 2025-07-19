@@ -2,7 +2,7 @@
     <main>
         <h1>About</h1>
         <p style="margin-top:0;text-align:center;font-weight:300">自己紹介</p>
-        <p>はじめまして。実つまめ (32ma.me) あるいは 中村 栞 (なかむら しお) と申します。</p>
+        <p>はじめまして。中村 栞 (なかむら しお) と申します。</p>
         <section>
             <h2>プロフィール</h2>
             <p>
