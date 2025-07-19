@@ -13,7 +13,7 @@
             </div>
             <div class="block">
                 <Icon icon="fa6-brands:github" aria-hidden="true"/>
-                <p>GitHub …… <a href="https://github.com/32ma-me" aria-label="GitHubプロフィール 32ma-me">32ma-me</a></p>
+                <p>GitHub …… <a href="https://github.com/407q" aria-label="GitHubプロフィール 407q">407q</a></p>
             </div>
             <div class="block">
                 <Icon icon="fa6-brands:keybase" aria-hidden="true"/>
