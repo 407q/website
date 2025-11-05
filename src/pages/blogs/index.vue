@@ -10,6 +10,7 @@ const respData=client.get({endpoint:"blogs"}).then(res=>{posts.value=res.content
 </script>
 <template>
     <main>
+        <Head><title>Blogs</title></Head>
         <h1>Blogs</h1>
         <p style="margin-top:0;text-align:center;font-weight:300">ブログ</p>
         <Transition>

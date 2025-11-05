@@ -1,4 +1,5 @@
 <template>
+    <Head><title>404 / ページが見つかりません</title></Head>
     <main>
         <div class="wrapper">
             <h1>404</h1>

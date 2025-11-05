@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {ref,onMounted} from "vue";
+import {useHead} from "@unhead/vue"
 import {useRoute} from "vue-router";
 const backShow=ref<boolean>();
 function scroll(){
@@ -15,6 +16,10 @@ onMounted(()=>{
   });
 });
 const route=useRoute();
+useHead({
+  titleTemplate:"%s | 32ma.me",
+  htmlAttrs:{lang:"ja"}
+})
 </script>
 <template>
     <Transition>

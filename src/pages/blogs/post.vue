@@ -3,6 +3,8 @@ import {ref,watch} from "vue";
 import {useRoute,useRouter} from "vue-router";
 import {format,isSameDay} from "date-fns";
 import {createClient} from "microcms-js-sdk";
+import {Head} from "@unhead/vue/components";
+import BudouXSSG from "@/components/budoux-ssg.vue";
 import type {Post} from "@/types/cms"
 import type {Ref} from "vue";
 const route=useRoute();
@@ -31,12 +33,10 @@ const respData=client.get({
 //}).then(res=>{console.log(res)//use on dev
 });
 const router=useRouter();
-watch(post,(postData:Post)=>{
-    document.title=`${postData.title}`;
-});
 </script>
 <template>
     <main>
+        <Head><title>{{post.title}}</title></Head>
         <Transition>
             <div v-if="post.publishedAt==''" role="status" aria-live="polite">
                 <p style="text-align:center">Loading...</p>
@@ -45,7 +45,7 @@ watch(post,(postData:Post)=>{
             <article v-else>
                 <h1>{{post.title}}</h1>
                 <p style="margin-top:0;text-align:center;font-weight:300">{{format(post.publishedAt||post.createdAt,"yyy/M/d")}}{{post.updatedAt&&!isSameDay(post.updatedAt,post.publishedAt||post.createdAt)?` (最終更新: ${format(post.updatedAt,"yyy/M/d")})`:""}}</p>
-                <budoux-ja v-html="post.content"/>
+                <BudouXSSG :text="post.content"/>
             </article>
         </Transition>
     </main>

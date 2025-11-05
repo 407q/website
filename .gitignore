@@ -29,3 +29,6 @@ coverage
 
 # macOS の呪縛
 ._*
+
+# SSG
+.vite-ssg-temp

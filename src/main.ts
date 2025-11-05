@@ -1,12 +1,10 @@
-import { createApp } from 'vue'
+import { ViteSSG } from 'vite-ssg'
 import App from './App.vue'
 import { Icon } from '@iconify/vue'
-import i18nJson from './assets/i18n.json'
-import { createWebHistory, createRouter } from 'vue-router'
-import "budoux/module/webcomponents/budoux-ja";
+import { Head } from '@unhead/vue/components'
+import { createHead } from '@unhead/vue/server'
 
-const router=createRouter({
-    history:createWebHistory(),
+export const createApp=ViteSSG(App,{
     routes:[
         {
             path:"/",
@@ -15,17 +13,14 @@ const router=createRouter({
         {
             path:"/404",
             component:()=>import("@/pages/404.vue"),
-            name:"404 / ページが見つかりません"
         },
         {
             path:"/about",
             component:()=>import("@/pages/about.vue"),
-            name:"About"
         },
         {
             path:"/blogs",
             component:()=>import("@/pages/blogs/index.vue"),
-            name:"Blogs"
         },
         {
             path:"/blogs/:id",
@@ -34,25 +29,17 @@ const router=createRouter({
         {
             path:"/skills",
             component:()=>import("@/pages/skills.vue"),
-            name:"Skills"
         },
         {
             path:"/links",
             component:()=>import("@/pages/links.vue"),
-            name:"Links"
         },
         {
             path:"/:pathMatch(.*)*",
             redirect:"/404"
         }
     ]
+},({app})=>{
+    app.component("Icon",Icon)
+    app.component("Head",Head)
 });
-
-router.afterEach((to)=>{
-    document.title=to.name?`${to.name as string} | 32ma.me`:"32ma.me / Shio Nakamura"
-})
-
-const app=createApp(App)
-app.component("Icon",Icon)
-app.use(router)
-app.mount('#app')

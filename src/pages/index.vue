@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import {useHead} from "@unhead/vue";
+useHead({
+  title:"Shio Nakamura / 32ma.me",
+  titleTemplate:""
+})
+</script>
+
 <template>
   <main>
     <img alt="プロフィール写真" src="/img/avatar.webp">
