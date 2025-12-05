@@ -20,10 +20,10 @@ const respData=client.get({endpoint:"blogs"}).then(res=>{posts.value=res.content
             </div>
             <section v-else class="posts">
                 <article class="post" v-for="post in posts" :key="post.id">
-                    <RouterLink :to="`/blogs/${post.id}`" :aria-label="`${post.title} の記事を読む`">
+                    <a :href="`/blogs/${post.id}`" :aria-label="`${post.title} の記事を読む`">
                         <h2>{{post.title}}</h2>
                         <p>{{format(post.publishedAt||post.createdAt,"yyy/M/d")}}{{post.updatedAt&&!isSameDay(post.updatedAt,post.publishedAt||post.createdAt)?` (最終更新: ${format(post.updatedAt,"yyy/M/d")})`:""}}</p>
-                    </RouterLink>
+                    </a>
                 </article>
             </section>
         </Transition>

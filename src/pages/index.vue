@@ -15,10 +15,10 @@ useHead({
         中村 栞 <wbr><span class="sub">Shio Nakamura</span>
       </h1>
       <nav aria-label="メインナビゲーション">
-        <RouterLink to="/about"><h2>About</h2> 自己紹介</RouterLink>
-        <RouterLink to="/blogs"><h2>Blogs</h2> ブログ</RouterLink>
-        <RouterLink to="/skills"><h2>Skills</h2> 資格・できること</RouterLink>
-        <RouterLink to="/links"><h2>Links</h2> SNS等</RouterLink>
+        <a href="/about"><h2>About</h2> 自己紹介</a>
+        <a href="/blogs"><h2>Blogs</h2> ブログ</a>
+        <a href="/skills"><h2>Skills</h2> 資格・できること</a>
+        <a href="/links"><h2>Links</h2> SNS等</a>
       </nav>
     </div>
   </main>

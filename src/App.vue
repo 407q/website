@@ -26,19 +26,15 @@ useHead({
       <header v-if="route.path!='/'">
         <svg viewBox="0 0 242.6 153" aria-label="32ma.me ロゴ"><use href="/img/logo.svg#logo"/></svg>
           <nav>
-            <RouterLink to="/">Home</RouterLink>
-            <RouterLink to="/about" title="自己紹介">About</RouterLink>
-            <RouterLink to="/blogs" title="ブログ">Blogs</RouterLink>
-            <RouterLink to="/skills" title="資格・できること">Skills</RouterLink>
-            <RouterLink to="/links" title="SNS等">Links</RouterLink>
+            <a href="/">Home</a>
+            <a :class="route.path==='/about'?'active':''" href="/about" title="自己紹介">About</a>
+            <a :class="route.path==='/blogs'?'active':''" href="/blogs" title="ブログ">Blogs</a>
+            <a :class="route.path==='/skills'?'active':''" href="/skills" title="資格・できること">Skills</a>
+            <a :class="route.path==='/links'?'active':''" href="/links" title="SNS等">Links</a>
           </nav>
       </header>
     </Transition>
-    <RouterView v-slot="{Component}">
-      <Transition name="page">
-        <component :is="Component"/>
-      </Transition>
-    </RouterView>
+    <RouterView/>
     <Transition>
       <button 
         class="back" 
@@ -131,15 +127,9 @@ header a:hover{
 header a:hover::after{
     width:100%;
 }
-.router-link-active::after{
+header a.active::after{
     width:100%;
     height:2px;
-}
-.page-enter-active{
-  transition:.2s ease;
-}
-.page-enter-from{
-  opacity:0;
 }
 .v-enter-active,.v-leave-active {
   transition: opacity 0.2s ease;
