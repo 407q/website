@@ -84,6 +84,7 @@ header{
     padding-inline:10vw;
     align-items:center;
     border-bottom:1px solid rgb(var(--fg));
+    z-index:100;
 }
 header svg{
   height:3.5rem;
