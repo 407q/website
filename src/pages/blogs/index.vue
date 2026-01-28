@@ -1,12 +1,31 @@
 <script setup lang="ts">
-import {ref} from "vue";
+import {ref,onServerPrefetch,onMounted,inject} from "vue";
 import {format,isSameDay} from "date-fns";
 import {createClient} from "microcms-js-sdk";
 import type {Posts} from "@/types/cms"
 import type {Ref} from "vue";
 const client=createClient({serviceDomain:"32m",apiKey:import.meta.env.VITE_MICROCMS_KEY,retry:true});
-const posts:Ref<Posts,Posts>=ref([]);
-const respData=client.get({endpoint:"blogs"}).then(res=>{posts.value=res.contents;return res});
+
+// initialState を inject
+const initialState=inject<Record<string,any>>('initialState',{});
+
+// 初期値は initialState から取得（なければ空配列）
+const posts:Ref<Posts,Posts>=ref(initialState.blogPosts||[]);
+
+// SSG時にデータを取得し initialState に保存
+onServerPrefetch(async()=>{
+    const res=await client.get({endpoint:"blogs"});
+    posts.value=res.contents;
+    initialState.blogPosts=res.contents;
+});
+
+// 開発時（SPA）のフォールバック
+onMounted(async()=>{
+    if(posts.value.length===0){
+        const res=await client.get({endpoint:"blogs"});
+        posts.value=res.contents;
+    }
+});
 </script>
 <template>
     <main>

@@ -39,7 +39,8 @@ export const createApp=ViteSSG(App,{
             redirect:"/404"
         }
     ]
-},({app})=>{
+},({app,initialState})=>{
     app.component("Icon",Icon)
     app.component("Head",Head)
+    app.provide('initialState',initialState)
 });
