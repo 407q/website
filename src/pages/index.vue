@@ -8,7 +8,9 @@ useHead({
 
 <template>
   <main>
-    <img alt="プロフィール写真" src="/img/avatar.webp">
+    <div class="avatar">
+      <img alt="プロフィール写真" src="/img/avatar.webp">
+    </div>
     <div>
       <svg viewBox="0 0 242.6 153" aria-label="32ma.me ロゴ"><use href="/img/logo.svg#logo"/></svg>
       <h1>
@@ -25,18 +27,26 @@ useHead({
 </template>
 
 <style scoped>
+@keyframes avatar-back{
+  from,to{
+    background:rgb(var(--sub));
+  }
+  50%{
+    background:rgba(var(--sub),0.5);
+  }
+}
 @media screen and (max-width:749px){
   main{
     flex-direction:column;
     gap:20px;
-    min-height:calc(100vh - 1rem - 55px);
+    min-height:calc(100vh - 3rem);
   }
 }
 @media screen and (min-width:750px){
   main{
     flex-direction:row;
     gap:50px;
-    min-height:calc(100vh - 55px);
+    min-height:calc(100vh - 3rem);
   }
 }
 main{
@@ -45,9 +55,16 @@ main{
   align-items:center;
   padding:0;
 }
-img{
-  max-height:30rem;
+.avatar{
+  background:rgb(var(--sub));
+  animation:3s avatar-back infinite;
+  width:22.5rem;
+  height:30rem;
   border-radius:5px;
+}
+img{
+  width:100%;
+  height:100%;
 }
 svg{
   display:block;
@@ -63,6 +80,8 @@ h1{
   font-size:2.5rem;
   font-weight:300;
   margin-block:.5rem 1.5rem;
+  padding-inline:0;
+  border:none;
 }
 h1 .sub{
   font-size:1.5rem;
@@ -70,8 +89,7 @@ h1 .sub{
 h2{
   display:inline;
   font-family:"tt-commons-pro",sans-serif;
-  font-size:1.5rem;
-  font-weight:500;
+  font-size:1.6rem;
 }
 nav{
   display:flex;
@@ -82,7 +100,7 @@ nav{
   margin-bottom:.9rem;
 }
 a{
-  font-weight:300;
+  font-weight:400;
   height:2.5rem;
   line-height:1.5em;
   display:inline-block;
@@ -97,7 +115,7 @@ a::after{
   display:inline-block;
   height:1px;
   width:0px;
-  background:rgb(var(--fg));
+  background:rgb(var(--acc));
   transition:.2s;
 }
 a:hover{

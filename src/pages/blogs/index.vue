@@ -12,7 +12,7 @@ const respData=client.get({endpoint:"blogs"}).then(res=>{posts.value=res.content
     <main>
         <Head><title>Blogs</title></Head>
         <h1>Blogs</h1>
-        <p style="margin-top:0;text-align:center;font-weight:300">ブログ</p>
+        <p style="margin-top:0;text-align:center">ブログ</p>
         <Transition>
             <div v-if="posts.length==0" role="status" aria-live="polite">
                 <p style="text-align:center;">Loading...</p>
@@ -46,16 +46,19 @@ const respData=client.get({endpoint:"blogs"}).then(res=>{posts.value=res.content
 a{
     text-decoration:none;
 }
+a:hover{
+    opacity:1;
+}
 .post{
     width:85%;
     padding:0.2rem 1rem;
     transition:.2s ease;
     border-radius:5px;
-    border:1px solid transparent;
+    border:2px solid transparent;
 }
 .post:hover{
     transform:scale(1.01);
-    border-color:rgb(var(--fg));
+    border-color:rgb(var(--acc));
 }
 h2{
     border:none;

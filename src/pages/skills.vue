@@ -2,7 +2,7 @@
     <main>
         <Head><title>Skills</title></Head>
         <h1>Skills</h1>
-        <p style="margin-top:0;text-align:center;font-weight:300">資格・できること</p>
+        <p style="margin-top:0;text-align:center">資格・できること</p>
         <section>
             <h2>取得した資格</h2>
             <article>

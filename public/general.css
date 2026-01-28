@@ -1,18 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code&family=Noto+Sans+JP:wght@300..600&display=swap');
 *{
-    --lily:#f9f9f9;
-    --charcoal:#303030;
-    --cherry:#e55274;
-    --clover:#93d040;
-    --river:#52b2dd;
-    --indigo:#3357d1;
-    --violet:#a944c7;
-    --fg:48,48,48;
-    --bg:249,249,249;
+    --fg:62,58,57;
+    --bg:255,255,255;
+    --acc:216,51,121;
+    --sub:250,220,226;
 }
 @media(prefers-color-scheme:dark){*{
     --fg:249,249,249;
-    --bg:48,48,48;
+    --bg:40,42,48;
+    --acc:216,51,121;
+    --sub:146,94,116;
 }}
 @keyframes pageIn{
     from{opacity:0;}
@@ -20,8 +17,9 @@
 }
 html{
     font-family:"Noto Sans JP",sans-serif;
-    font-size:18px;
-    letter-spacing:.03em;
+    font-size:16px;
+    letter-spacing:.05em;
+    line-height:1.4;
 }
 body{
     color:rgb(var(--fg));
@@ -44,27 +42,30 @@ footer{
     text-align:center;
 }
 footer p{
+    font-weight:300;
     margin:0;
 }
 a{
     color:rgb(var(--fg));
-    text-decoration:underline;
-    text-decoration-thickness:0.05rem;
+    text-decoration:underline dashed;
+    text-decoration-color:rgb(var(--acc));
+    text-decoration-thickness:0.1rem;
 }
 a:hover{
     opacity:.8;
     transition:.2s;
 }
-a:focus{
-    outline:2px solid rgb(var(--fg));
-    outline-offset:2px;
-}
 h1{
     font-family:"tt-commons-pro","Noto Sans JP",sans-serif;
     font-size:3rem;
-    font-weight:300;
+    font-weight:400;
     text-align:center;
-    margin-bottom:0;
+    line-height:1.5;
+    margin-bottom:0.5rem;
+    border-bottom:2px dashed rgb(var(--acc));
+    width:fit-content;
+    padding-inline:2rem;
+    margin-inline:auto;
 }
 h2{
     margin:1rem 0;
@@ -102,10 +103,10 @@ figcaption,cite{
     padding:0.2rem 0;
 }
 blockquote{
-    border-left:0.5rem solid rgb(var(--fg));
+    border-left:0.5rem double rgb(var(--sub));
     margin-left:0;
     margin-right:0;
-    padding-left:1rem;
+    padding-left:0.8rem;
 }
 code{
     border-radius:10px;

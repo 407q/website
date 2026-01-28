@@ -44,7 +44,7 @@ const router=useRouter();
             </div>
             <article v-else>
                 <h1>{{post.title}}</h1>
-                <p style="margin-top:0;text-align:center;font-weight:300">{{format(post.publishedAt||post.createdAt,"yyy/M/d")}}{{post.updatedAt&&!isSameDay(post.updatedAt,post.publishedAt||post.createdAt)?` (最終更新: ${format(post.updatedAt,"yyy/M/d")})`:""}}</p>
+                <p style="margin-top:0;text-align:center">{{format(post.publishedAt||post.createdAt,"yyy/M/d")}}{{post.updatedAt&&!isSameDay(post.updatedAt,post.publishedAt||post.createdAt)?` (最終更新: ${format(post.updatedAt,"yyy/M/d")})`:""}}</p>
                 <BudouXSSG :text="post.content"/>
             </article>
         </Transition>

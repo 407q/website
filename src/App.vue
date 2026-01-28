@@ -59,7 +59,7 @@ useHead({
   }
   main{
     padding-top:8rem;
-    min-height:calc(100vh - 9rem - 55px);
+    min-height:calc(100vh - 11rem);
   }
 }
 @media screen and (min-width:650px){
@@ -70,7 +70,7 @@ useHead({
   }
   main{
     padding-top:4rem;
-    min-height:calc(100vh - 5rem - 55px);
+    min-height:calc(100vh - 7rem);
   }
 }
 header{
@@ -83,7 +83,7 @@ header{
     left:0;
     padding-inline:10vw;
     align-items:center;
-    border-bottom:1px solid rgb(var(--fg));
+    border-bottom:1px solid rgba(var(--fg),0.2);
     z-index:100;
 }
 header svg{
@@ -108,6 +108,7 @@ header nav{
 }
 header a{
     font-family:"tt-commons-pro",sans-serif;
+    font-weight:300;
     display:inline-block;
     text-decoration:none;
     transition:none;
@@ -119,7 +120,7 @@ header a::after{
     display:inline-block;
     height:1px;
     width:0px;
-    background:rgb(var(--fg));
+    background:rgb(var(--acc));
     transition:.2s;
 }
 header a:hover{
@@ -147,7 +148,9 @@ header a.active::after{
   display:block;
   background:rgba(var(--bg),.7);
   border-radius:25px;
-  border:1px solid rgba(var(--fg),0);
+  border:none;
+  outline:#fff0;
+  backdrop-filter:blur(3px);
   cursor:pointer;
   transition:.1s;
 }
@@ -156,16 +159,16 @@ header a.active::after{
   content:"";
   width:15px;
   height:15px;
-  border-left:3px solid rgb(var(--fg));
-  border-top:3px solid rgb(var(--fg));
-  transform:translate(10px,7px) rotate(45deg);
+  border-left:3px solid rgb(var(--acc));
+  border-top:3px solid rgb(var(--acc));
+  transform:translate(107px,7px) rotate(45deg);
   transition:.2s;
 }
-.back:hover{
+.back:hover,.back:focus{
   background:rgb(var(--bg));
-  border-color:rgba(var(--fg),.5);
+  outline:1px solid rgb(var(--acc));
 }
-.back:hover::after{
+.back:hover::after,.back:focus::after{
   transform:translate(10px,4px) rotate(45deg);
 }
 footer p{

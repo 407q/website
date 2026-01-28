@@ -2,7 +2,7 @@
     <main>
         <Head><title>Links</title></Head>
         <h1>Links</h1>
-        <p style="margin-top:0;text-align:center;font-weight:300">SNS等</p>
+        <p style="margin-top:0;text-align:center">SNS等</p>
         <section class="wrapper">
             <div class="block">
                 <Icon icon="fa6-brands:square-x-twitter" aria-hidden="true"/>
