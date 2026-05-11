@@ -133,6 +133,18 @@ pre{
     background:#605f52;
     overflow:scroll;
 }
+table{
+    border-collapse:collapse;
+    margin:.5em;
+}
+th{
+    padding:.5em;
+    background:rgb(var(--sub));
+}
+td{
+    padding:.5em;
+    background:#eee;
+}
 /* reduced motion対応 */
 @media (prefers-reduced-motion: reduce) {
     *,
