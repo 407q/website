@@ -10,7 +10,7 @@
             </div>
             <div class="block">
                 <Icon icon="fa6-brands:youtube" aria-hidden="true"/>
-                <p>YouTube …… <a href="https://youtube.com/@32ma_me" aria-label="YouTubeチャンネル @32ma_me">@32ma_me</a></p>
+                <p>YouTube …… <a href="https://youtube.com/@32ma_me" aria-label="YouTubeチャンネル @32ma_me">@32ma_me (もう動いてません)</a></p>
             </div>
             <div class="block">
                 <Icon icon="fa6-brands:github" aria-hidden="true"/>
